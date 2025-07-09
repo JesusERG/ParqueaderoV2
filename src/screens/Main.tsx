@@ -1,32 +1,15 @@
-import { View, Text, StyleSheet, Platform, SafeAreaView } from 'react-native';
+import { StyleSheet, Platform, SafeAreaView } from 'react-native';
+import MainContent from '../components/MainContent';
 
 const Main = () => {
   return (
     <>
       {Platform.OS === 'ios' ? (
         <SafeAreaView style={styles.mainContainer}>
-          <View style={styles.topContainer}>
-            <Text>Top</Text>
-          </View>
-          <View style={styles.listContainer}>
-            <Text>List</Text>
-          </View>
-          <View style={styles.mapContainer}>
-            <Text>Map</Text>
-          </View>
+          <MainContent />
         </SafeAreaView>
       ) : (
-        <View style={styles.mainContainer}>
-          <View style={styles.topContainer}>
-            <Text>Top</Text>
-          </View>
-          <View style={styles.listContainer}>
-            <Text>List</Text>
-          </View>
-          <View style={styles.mapContainer}>
-            <Text>Map</Text>
-          </View>
-        </View>
+        <MainContent />
       )}
     </>
   );
@@ -35,21 +18,6 @@ const Main = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-  },
-  topContainer: {
-    borderColor: 'black',
-    borderWidth: 1,
-    flex: 1,
-  },
-  listContainer: {
-    borderColor: 'yellow',
-    borderWidth: 1,
-    flex: 8,
-  },
-  mapContainer: {
-    borderColor: 'blue',
-    borderWidth: 1,
-    flex: 8,
   },
 });
 
